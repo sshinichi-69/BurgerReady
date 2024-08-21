@@ -21,12 +21,6 @@ namespace BurgerReady.Upgrade
             HideUpgradeUi();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void ShowUpgradeUi()
         {
             upgradeUi.SetActive(true);
@@ -41,7 +35,14 @@ namespace BurgerReady.Upgrade
         {
             int playerCapacityLevel = GameManager.Instance.UpgradePlayerCapacity();
             capacityLevel.text = "Level: " + playerCapacityLevel.ToString();
-            capacityUpgradeCost.text = Constant.upgradeCost[playerCapacityLevel - 1].ToString();
+            if (playerCapacityLevel <= Constant.upgradeCost.Count)
+            {
+                capacityUpgradeCost.text = Constant.upgradeCost[playerCapacityLevel - 1].ToString();
+            }
+            else
+            {
+                capacityUpgradeCost.text = "MAX";
+            }
         }
     }
 }

@@ -23,15 +23,6 @@ namespace BurgerReady.Restaurant.Customer
             customerInitPos = new Vector3(-5, 1, -15);
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (customers.Count > 0)
-            {
-
-            }
-        }
-
         public void MoveToCounter()
         {
             bool isFirst = true;

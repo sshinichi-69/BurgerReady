@@ -27,12 +27,6 @@ namespace BurgerReady.Restaurant.Table
             emptyTables.Add(tableSlots[0].GetComponent<TableSlot>().GetTable());
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public Table FindTableForCustomer()
         {
             if (emptyTables.Count == 0)

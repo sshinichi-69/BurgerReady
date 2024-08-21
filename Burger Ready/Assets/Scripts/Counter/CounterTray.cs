@@ -14,12 +14,6 @@ namespace BurgerReady.Restaurant.Counter
             m_burgers = new Stack<GameObject>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void TakeBurger(List<GameObject> burgers)
         {
             foreach (GameObject burger in burgers)
@@ -28,7 +22,6 @@ namespace BurgerReady.Restaurant.Counter
                 burger.transform.parent = transform;
                 m_burgers.Push(burger);
             }
-            Debug.Log("Counter got " + burgers.Count + " burgers from Player and is currently having " + m_burgers.Count + " burgers");
         }
 
         public List<GameObject> SellBurger(int nBurgerSell)
@@ -42,7 +35,6 @@ namespace BurgerReady.Restaurant.Counter
                 result.Add(burger);
                 m_burgers.Pop();
             }
-            Debug.Log("Restaurant sold " + result.Count + " burgers to first customer and is currently having " + m_burgers.Count + " burgers");
             return result;
         }
     }

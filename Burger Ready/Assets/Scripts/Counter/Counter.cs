@@ -10,18 +10,6 @@ namespace BurgerReady.Restaurant.Counter
         [SerializeField] private GameObject tray;
         [SerializeField] private GameObject sellCounterSlot;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void Init(RestaurantController restaurant)
         {
             m_restaurant = restaurant;

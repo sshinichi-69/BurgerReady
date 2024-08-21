@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BurgerReady.Restaurant.Table
 {
-    public class Table : TableSlotType
+    public class Table : MonoBehaviour
     {
         private TableManager m_tableManager;
         private Customer.Customer m_customer;
@@ -12,12 +12,6 @@ namespace BurgerReady.Restaurant.Table
         void Start()
         {
             m_customer = null;
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
         }
 
         public void Init(TableManager tableManager)

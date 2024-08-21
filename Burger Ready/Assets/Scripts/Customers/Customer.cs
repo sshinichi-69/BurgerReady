@@ -138,7 +138,6 @@ namespace BurgerReady.Restaurant.Customer
                     m_animator.Play("Base Layer.CustomerWaitTable");
                     FindTable();
                 }
-                Debug.Log("Customer bought " + burgers.Count + " burgers and is currently having " + m_burgers.Count + " burgers");
             }
         }
 

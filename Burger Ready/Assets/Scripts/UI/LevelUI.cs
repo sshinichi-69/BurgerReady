@@ -17,7 +17,7 @@ namespace BurgerReady.UI
         {
             m_levelRt.anchoredPosition = new Vector2(-Screen.width * 0.2f, -Screen.height / 12);
 
-            m_level_expRt.sizeDelta = new Vector2(Screen.width * 0.3f, m_level_expRt.sizeDelta.y);
+            m_level_expRt.sizeDelta = new Vector2(Screen.width * 0.3f, Screen.height / 38);
 
             m_level_exp_textTxt.fontSize = Screen.height / 44;
 

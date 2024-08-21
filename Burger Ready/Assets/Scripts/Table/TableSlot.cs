@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace BurgerReady.Restaurant.Table
@@ -12,17 +11,6 @@ namespace BurgerReady.Restaurant.Table
         [SerializeField] private GameObject tableUnlockSlotPrefab;
         [SerializeField] private GameObject tablePrefab;
         private GameObject child;
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void Init(TableManager tableManager, int idx)
         {
@@ -30,11 +18,6 @@ namespace BurgerReady.Restaurant.Table
             m_tableManager = tableManager;
             m_unlockCost = Constant.unlockTableCost[idx];
             SetToTableUnlockSlot();
-        }
-
-        public void OnCollisionEnter(Collision collision)
-        {
-            
         }
 
         public void SetToTableUnlockSlot()

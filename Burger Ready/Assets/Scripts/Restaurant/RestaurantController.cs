@@ -37,12 +37,6 @@ namespace BurgerReady.Restaurant
             counters.Add(counter.GetComponent<Counter.Counter>());
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public int GetFirstCustomerBurgerQuantity()
         {
             return customerQueue.GetFirstCustomerBurgerQuantity();

@@ -8,7 +8,7 @@ namespace BurgerReady
     {
         public static bool IsEqual(Vector3 a, Vector3 b)
         {
-            return (a - b).magnitude < 0.01f;
+            return (a - b).magnitude < 0.1f;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace BurgerReady.Restaurant
 
     public class BurgerMaker : MonoBehaviour
     {
-        private int nMaxBurger = 4;
+        private int nMaxBurger = 6;
         private BurgerMakerState state;
         private Stack<GameObject> burgersCompleted;
 
@@ -55,7 +55,6 @@ namespace BurgerReady.Restaurant
             burgersCompleted.Push(burger);
             state = BurgerMakerState.IDLE;
             burgerMakerAnimator.Play("Base Layer.BurgerMakerIdle");
-            Debug.Log("Burger Maker is having " + burgersCompleted.Count + " burgers on the tray");
         }
 
         public List<GameObject> GiveBurger(int quantity)

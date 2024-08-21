@@ -3,20 +3,9 @@ using UnityEngine.UI;
 
 namespace BurgerReady.Restaurant.Table
 {
-    public class TableUnlockSlot : TableSlotType
+    public class TableUnlockSlot : MonoBehaviour
     {
         [SerializeField] private Text m_unlockCostText;
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void Init(int unlockCost)
         {

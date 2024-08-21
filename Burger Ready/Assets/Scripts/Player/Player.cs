@@ -62,6 +62,14 @@ namespace BurgerReady.Player
             }
         }
 
+        public void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.GetComponent<SellCounterSlot>() != null)
+            {
+                other.gameObject.GetComponent<SellCounterSlot>().SellBurger();
+            }
+        }
+
         public void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.GetComponent<BurgerMaker>() != null)
@@ -103,7 +111,6 @@ namespace BurgerReady.Player
                 burgers[i].transform.parent = tray.transform.parent;
                 burgersCarrying.Push(burgers[i]);
             }
-            Debug.Log("Player picked " + burgers.Count + " burgers from Burger Maker and is carrying " + burgersCarrying.Count + " burgers");
         }
 
         public void GiveBurgersToCounter(CounterTray counterTray)
@@ -118,13 +125,11 @@ namespace BurgerReady.Player
             }
             counterTray.TakeBurger(burgers);
             animator.Play("Base Layer.PlayerIdle");
-            Debug.Log("Player gave " + burgers.Count + " burgers to Counter Tray");
         }
 
         public int UpgradeCapacity()
         {
-            Debug.LogWarning("Player::UpgradeCapacity");
-            if (m_capacityLevel - 1 < Constant.upgradeCost.Count && m_gold >= Constant.upgradeCost[m_capacityLevel - 1])
+            if (m_capacityLevel <= Constant.upgradeCost.Count && m_gold >= Constant.upgradeCost[m_capacityLevel - 1])
             {
                 m_capacityLevel++;
                 m_capacity++;
