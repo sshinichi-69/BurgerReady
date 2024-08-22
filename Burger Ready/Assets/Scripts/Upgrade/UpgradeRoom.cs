@@ -12,6 +12,10 @@ namespace BurgerReady.Upgrade
         [SerializeField] private Text capacityLevel;
         [SerializeField] private Text capacityUpgradeCost;
 
+        [SerializeField] private Button upgradeButton;
+        [SerializeField] private Color enableButtonColor;
+        [SerializeField] private Color disableButtonColor;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -24,6 +28,24 @@ namespace BurgerReady.Upgrade
         public void ShowUpgradeUi()
         {
             upgradeUi.SetActive(true);
+            if (int.TryParse(capacityUpgradeCost.text, out int upgradeCost))
+            {
+                if (GameManager.Instance.PlayerGold >= upgradeCost)
+                {
+                    upgradeButton.GetComponent<Image>().color = enableButtonColor;
+                    upgradeButton.interactable = true;
+                }
+                else
+                {
+                    upgradeButton.GetComponent<Image>().color = disableButtonColor;
+                    upgradeButton.interactable = false;
+                }
+            }
+            else
+            {
+                upgradeButton.GetComponent<Image>().color = disableButtonColor;
+                upgradeButton.interactable = false;
+            }
         }
 
         public void HideUpgradeUi()
@@ -43,6 +65,7 @@ namespace BurgerReady.Upgrade
             {
                 capacityUpgradeCost.text = "MAX";
             }
+            ShowUpgradeUi();
         }
     }
 }

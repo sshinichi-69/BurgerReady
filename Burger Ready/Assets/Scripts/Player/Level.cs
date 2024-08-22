@@ -23,10 +23,13 @@ namespace BurgerReady.Player
             SetExpUi();
             if (m_exp >= m_maxExp)
             {
-                if (m_level < Constant.expToLevelUp.Count)
+                if (m_level <= Constant.expToLevelUp.Count)
                 {
                     m_level++;
-                    m_maxExp = Constant.expToLevelUp[m_level - 1];
+                    if (m_level <= Constant.expToLevelUp.Count)
+                    {
+                        m_maxExp = Constant.expToLevelUp[m_level - 1];
+                    }
                     SetLevelUi();
                     SetMaxExpUi();
                 }
@@ -45,12 +48,12 @@ namespace BurgerReady.Player
 
         public void SetExpUi()
         {
-            GameManager.Instance.SetExpUi(m_exp, m_maxExp);
+            GameManager.Instance.SetExpUi(m_exp, m_maxExp, m_level > Constant.expToLevelUp.Count);
         }
 
         public void SetMaxExpUi()
         {
-            GameManager.Instance.SetMaxExpUi(m_maxExp, m_exp);
+            GameManager.Instance.SetMaxExpUi(m_maxExp, m_exp, m_level > Constant.expToLevelUp.Count);
         }
 
         public IEnumerator Initial()

@@ -939,6 +939,9 @@ MonoBehaviour:
   upgradeUi: {fileID: 0}
   capacityLevel: {fileID: 0}
   capacityUpgradeCost: {fileID: 0}
+  upgradeButton: {fileID: 0}
+  enableButtonColor: {r: 0, g: 1, b: 1, a: 1}
+  disableButtonColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
 --- !u!1 &4401081185762998818
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,12 +29,15 @@ namespace BurgerReady.Restaurant.Table
 
         public void SetToTableSlot()
         {
-            Destroy(GetComponent<BoxCollider>());
-            child.GetComponent<TableUnlockSlot>().Unlock();
-            child = Instantiate(tablePrefab, transform.position, Quaternion.identity);
-            child.GetComponent<Table>().Init(m_tableManager);
-            child.transform.parent = transform;
-            m_tableManager.ReceiveEmptyTable(child.GetComponent<Table>());
+            if (child.GetComponent<TableUnlockSlot>() != null)
+            {
+                Destroy(GetComponent<BoxCollider>());
+                child.GetComponent<TableUnlockSlot>().Unlock();
+                child = Instantiate(tablePrefab, transform.position, Quaternion.identity);
+                child.GetComponent<Table>().Init(m_tableManager);
+                child.transform.parent = transform;
+                m_tableManager.ReceiveEmptyTable(child.GetComponent<Table>());
+            }
         }
 
         public void ConfigSetToTableSlot()

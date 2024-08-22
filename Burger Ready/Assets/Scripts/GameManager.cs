@@ -72,16 +72,31 @@ namespace BurgerReady
             m_levelText.text = level.ToString();
         }
 
-        public void SetExpUi(int exp, int maxExp)
+        public void SetExpUi(int exp, int maxExp, bool isMaxLevel)
         {
-            m_expText.text = exp + " / " + maxExp;
-            m_expSlider.value = exp;
+            if (isMaxLevel)
+            {
+                m_expText.text = "MAX";
+                m_expSlider.value = m_expSlider.maxValue;
+            }
+            else
+            {
+                m_expText.text = exp + " / " + maxExp;
+                m_expSlider.value = exp;
+            }
         }
 
-        public void SetMaxExpUi(int maxExp, int exp)
+        public void SetMaxExpUi(int maxExp, int exp, bool isMaxLevel)
         {
-            m_expText.text = exp + " / " + maxExp;
-            m_expSlider.maxValue = maxExp;
+            if (isMaxLevel)
+            {
+                m_expText.text = "MAX";
+            }
+            else
+            {
+                m_expText.text = exp + " / " + maxExp;
+                m_expSlider.maxValue = maxExp;
+            }
         }
 
         public void SetGold(int gold)
@@ -89,7 +104,8 @@ namespace BurgerReady
             m_goldText.text = gold.ToString();
         }
 
-        public Level Level { get { return m_player.Level; } }
+        public Level PlayerLevel { get { return m_player.Level; } }
+        public int PlayerGold { get { return m_player.Gold; } }
         public RestaurantController Restaurant { get { return m_restaurant; } }
     }
 }

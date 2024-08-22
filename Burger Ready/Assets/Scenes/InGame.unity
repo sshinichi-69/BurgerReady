@@ -3772,6 +3772,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 989785380455274301}
     - target: {fileID: 1080097896236976305, guid: 77b73332f9ada06428c460bec6c3d17d, type: 3}
+      propertyPath: upgradeButton
+      value: 
+      objectReference: {fileID: 3135979916718993458}
+    - target: {fileID: 1080097896236976305, guid: 77b73332f9ada06428c460bec6c3d17d, type: 3}
       propertyPath: capacityUpgradeCost
       value: 
       objectReference: {fileID: 2913344079010786968}

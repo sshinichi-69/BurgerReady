@@ -32,12 +32,8 @@ namespace BurgerReady.Player
             burgersCarrying = new Stack<GameObject>();
 
             animator = GetComponent<Animator>();
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-
+            SetGoldUi();
         }
 
         public void OnTriggerEnter(Collider other)
@@ -131,6 +127,8 @@ namespace BurgerReady.Player
         {
             if (m_capacityLevel <= Constant.upgradeCost.Count && m_gold >= Constant.upgradeCost[m_capacityLevel - 1])
             {
+                m_gold -= Constant.upgradeCost[m_capacityLevel - 1];
+                SetGoldUi();
                 m_capacityLevel++;
                 m_capacity++;
             }
@@ -156,5 +154,6 @@ namespace BurgerReady.Player
         }
 
         public Level Level { get { return m_level; } }
+        public int Gold { get { return m_gold; } }
     }
 }

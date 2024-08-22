@@ -55,7 +55,7 @@ namespace BurgerReady.Restaurant.Customer
                             {
                                 m_state = CustomerState.WAITING_BURGER;
                                 m_animator.Play("Base Layer.CustomerWaitBurger");
-                                m_nBurgerNeed = Random.Range(1, GameManager.Instance.Level.Value + 1);
+                                m_nBurgerNeed = Random.Range(1, GameManager.Instance.PlayerLevel.Value + 1);
                                 m_nRestBurgerNeedText.text = m_nBurgerNeed.ToString();
                                 m_goalPos.Clear();
                             }

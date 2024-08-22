@@ -26,22 +26,22 @@ namespace BurgerReady.UnlockBT
                 {
                     new Sequence(new List<Node>()
                     {
-                        new CheckLevelUp(GameManager.Instance.Level, 1),
+                        new CheckLevelUp(GameManager.Instance.PlayerLevel, 1),
                         new TaskUnlockSlot(GameManager.Instance.Restaurant.TableManager)
                     }),
                     new Sequence(new List<Node>()
                     {
-                        new CheckLevelUp(GameManager.Instance.Level, 3),
+                        new CheckLevelUp(GameManager.Instance.PlayerLevel, 3),
                         new TaskUnlockSlot(GameManager.Instance.Restaurant.TableManager)
                     }),
                     new Sequence(new List<Node>()
                     {
-                        new CheckLevelUp(GameManager.Instance.Level, 3),
+                        new CheckLevelUp(GameManager.Instance.PlayerLevel, 3),
                         new TaskUnlockSlot(GameManager.Instance.Restaurant.TableManager)
                     }),
                     new Sequence(new List<Node>()
                     {
-                        new CheckLevelUp(GameManager.Instance.Level),
+                        new CheckLevelUp(GameManager.Instance.PlayerLevel),
                         new TaskUnlockSlot(GameManager.Instance.Restaurant.TableManager)
                     }),
                 });
