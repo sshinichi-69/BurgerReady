@@ -22,7 +22,7 @@ namespace BurgerReady.Restaurant.Table
 
         public void SetToTableUnlockSlot()
         {
-            child = Instantiate(tableUnlockSlotPrefab, transform.position + Vector3.up * 0.09f, Quaternion.identity);
+            child = Instantiate(tableUnlockSlotPrefab, transform.position + Vector3.up * 0.2f, Quaternion.identity);
             child.GetComponent<TableUnlockSlot>().Init(m_unlockCost);
             child.transform.parent = transform;
         }
